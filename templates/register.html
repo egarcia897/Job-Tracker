@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-5 mt-5">
+        <div class="card shadow p-4">
+            <h2 class="text-center mb-4">Create Your Account</h2>
+            
+
+            <form method="POST">
+                <div class="mb-4">
+                    <label class="form-label fw-bold">Username</label>
+                    <input type="text" name="username" class="form-control" placeholder="Create a username" required>
+                </div>
+                <div class="mb-4">
+                    <label class="form-label fw-bold">Password</label>
+                    <input type="password" name="password" class="form-control" placeholder="Create a password" required>
+                </div>
+                <button type="submit" class=""btn btn-pinterest w-100 py-2>Create Account</button>
+            </form>
+
+            <hr class="my-4">
+            <p class="text-center mb-0">
+                Already have an account? <a href="{{ url_for('login') }}" class="text-danger fw-bold text-decoration-none">Login here</a>
+
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock %}

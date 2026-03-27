@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-5 mt-5">
+        <div class="card shadow p-4">
+            <h2 class="text-center mb-4">Login</h2>
+            <form method="POST">
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Username</label>
+                    <input type="text" name="username" class="form-control" placeholder="Enter username" required>
+                </div>
+                <div class="mb-4">
+                    <label class="form-label fw-bold">Password</label>
+                    <input type="password" name="password" class="form-control" placeholder="Enter username" required>
+                </div>
+                <button type="submit" class="btn btn-pinterest w-100 py-2">Sign In</button>
+            </form>
+            <hr class="my-4">
+            <p class="text-center mb-0">
+                Need an account? <a href="{{ url_for('register') }}" class="text-danger fw-bold text-decoration-none">Register here</a>
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-7">
+        <div class="card p-4 shadow">
+            <h2 class="mb-4 text-center">Add New Job Application</h2>
+            
+            <form method="POST"> <div class="mb-3">
+                    <label class="form-label fw-bold">Company Name</label>
+                    <input type="text" name="company" class="form-control" placeholder="e.g. Pinterest" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Job Title / Role</label>
+                    <input type="text" name="role" class="form-control" placeholder="e.g. Software Engineer Apprentice" required>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold">Current Status</label>
+                        <select name="status" class="form-select">
+                            <option value="Applied">Applied</option>
+                            <option value="Interview">Interview</option>
+                            <option value="Offer">Offer</option>
+                            <option value="Rejected">Rejected</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold">Date Applied</label>
+                        <input type="date" name="date_applied" class="form-control" required>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Notes</label>
+                    <textarea name="notes" class="form-control" rows="3" placeholder="Add any details about the interview process..."></textarea>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Job Posting Link</label>
+                    <input type="url" name="link" class="form-control" placeholder="https://careers.pinterest.com/...">
+                </div>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <a href="{{ url_for('index') }}" class="btn btn-light me-md-2">Cancel</a>
+                    <button type="submit" class="btn btn-pinterest px-5">Save Application</button>
+                </div>
+            </form> </div>
+    </div>
+</div>
+{% endblock %}
