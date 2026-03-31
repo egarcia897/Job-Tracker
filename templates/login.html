@@ -1,23 +1,36 @@
 {% extends "base.html" %}
+
 {% block content %}
 <div class="row justify-content-center">
     <div class="col-md-5 mt-5">
-        <div class="card shadow p-4">
-            <h2 class="text-center mb-4">Login</h2>
-            <form method="POST">
+        <div class="card shadow p-4 border-0">
+            <h2 class="text-center mb-4 fw-bold">Sign In</h2>
+            
+            <form action="{{ url_for('login') }}" method="POST">
+                
                 <div class="mb-3">
                     <label class="form-label fw-bold">Username</label>
-                    <input type="text" name="username" class="form-control" placeholder="Enter username" required>
+                    <input type="text" name="username" class="form-control" placeholder="Enter your username" required autofocus>
                 </div>
+                
                 <div class="mb-4">
                     <label class="form-label fw-bold">Password</label>
-                    <input type="password" name="password" class="form-control" placeholder="Enter username" required>
+                    <input type="password" name="password" class="form-control" placeholder="Enter your password" required>
                 </div>
-                <button type="submit" class="btn btn-pinterest w-100 py-2">Sign In</button>
+                
+                <button type="submit" class="btn btn-danger w-100 py-2 fw-bold shadow-sm">
+                    Login to Tracker
+                </button>
+                
             </form>
+            
             <hr class="my-4">
+            
             <p class="text-center mb-0">
-                Need an account? <a href="{{ url_for('register') }}" class="text-danger fw-bold text-decoration-none">Register here</a>
+                New to the tracker? 
+                <a href="{{ url_for('register') }}" class="text-danger fw-bold text-decoration-none">
+                    Create an account
+                </a>
             </p>
         </div>
     </div>
